@@ -1,0 +1,41 @@
+AR_track = ["Demons by Imagine Dragons", "Boulevard of Broken Dreams by Green Day", "Face Down by Red Jumpsuit Apparatus"]
+item = "new song"
+
+def add(item):
+	AR_track.append(item)
+	return AR_track
+
+def alph(item):
+	AR_track.sort(item)
+	print AR_track
+
+def remove(item):
+	AR_track.pop()
+		
+
+def main():
+	print "DJ your own playlist!"
+	loop = 1
+	while loop == 1:
+		choice = raw_input("Please select one of the following options: 1-Yes 2-Alphabetize your songs 3- Check your playlist 4- Remove last song 5- Reorder your songs 6-Finished playlist!")
+		if choice == "1":
+			item = raw_input("What song would you like to add?  Please write the name of the song and the musician. ie. Hello by Adele")
+			add(item)
+		elif choice == "2":
+			alph(AR_track)
+			return AR_track
+		elif choice == "3":
+			print AR_track
+		elif choice == "4":
+			remove(item)
+		elif choice == "5":
+			reorder(item)
+		elif choice == "6":
+			loop = 0
+			print AR_track
+		else:
+			print "Please make a valid choice"
+		
+
+if __name__ == '__main__': 
+		main()
